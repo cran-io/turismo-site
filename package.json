@@ -1,7 +1,7 @@
 {
-  "name": "dex_web",
+  "name": "turismo-site",
   "version": "0.0.1",
-  "description": "DEX webapp",
+  "description": "turismo-site",
   "main": "js/app.js",
   "scripts": {
     "start": "watchify js/app.js -o js/bundle.js -v -d",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cran-io/dex_web.git"
+    "url": "https://github.com/cran-io/turismo-site"
   },
   "author": "CRAN.IO",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cran-io/dex_web/issues"
+    "url": "https://github.com/cran-io/turismo-site/issues"
   },
-  "homepage": "http://dexagenda.com",
+  "homepage": "http://turismosite.com",
   "dependencies": {
     "flux": "^2.0.1",
     "keymirror": "^0.1.1",
