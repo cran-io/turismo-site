@@ -4,3 +4,106 @@
 .height100{
 	height: 100%!important;
 }
+.profileHeader{
+	height: 200px;
+}
+.noDisplay{
+	display: none;
+}
+.noSideMargin{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.noMargin{
+	margin: 0px;
+}
+.noPadding{
+	padding: 0px;
+}
+.centered{
+	text-align: center;
+}
+
+
+/*CARD*/
+.photoCard {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow .75s;
+  border-radius: 3px; 
+  height:250px;
+  width: 250px;
+  z-index: 1;
+}
+.imgCard{
+	height: 250px;
+  width: 250px;
+}
+.photoIcons{
+	position: absolute;
+	top:0;
+	left:0;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 3px; 
+  height:250px;
+  width: 250px;
+  z-index: 4;
+  opacity:0.4;
+}
+.iconsDiv{
+	margin-left: 20%;
+	margin-right: 20%;
+}
+.icon{
+	font-size: 20px;
+	color:white;
+	opacity: 1;
+}
+
+/*INSTAGRAM ICONS*/
+
+@font-face {
+	font-family: 'instagram';
+	src:url('../font/instagram.eot?avp5sj');
+	src:url('../font/instagram.eot?#iefixavp5sj') format('embedded-opentype'),
+		url('../font/instagram.ttf?avp5sj') format('truetype'),
+		url('../font/instagram.woff?avp5sj') format('woff'),
+		url('../font/instagram.svg?avp5sj#instagram') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icons-"], [class*=" icons-"] {
+	font-family: 'instagram';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icons-bubble:before {
+	content: "\e96b";
+}
+.icons-download2:before {
+	content: "\e9c5";
+}
+.icons-heart:before {
+	content: "\e9da";
+}
+.icons-share2:before {
+	content: "\ea82";
+}
+
+.navLogo{
+	margin-top: 6px;
+	margin-left: 20px;
+	height:56px;
+}

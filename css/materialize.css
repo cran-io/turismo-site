@@ -5246,7 +5246,7 @@ span.badge {
 
 nav {
   color: #7f8c8d;
-  background-color: #fff;
+  background-color: #004783;
   width: 100%;
   height: 56px;
   line-height: 56px; }
@@ -5610,7 +5610,8 @@ small {
   .card .card-reveal {
     padding: 20px;
     position: absolute;
-    background-color: #fff;
+    background-color: black;
+    opacity: 0.6;
     width: 100%;
     overflow-y: auto;
     top: 100%;

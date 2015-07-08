@@ -1,7 +1,12 @@
 var React = require('react');
-var DexApp = require('./components/DexApp.react');
+var router = require('./router').getRouter();
+window.React = React;
 
-React.render(
-  <DexApp />,
-  document.getElementById('dexapp')
-);
+router.run(function (Handler, state) {
+	React.render(
+	  <Handler />,
+	  document.getElementById('turismoapp')
+	);
+})
+
+

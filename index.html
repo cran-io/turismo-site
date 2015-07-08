@@ -8,26 +8,32 @@
 		<script src="js/jquery.min.js"></script><!--JQuery 1.11.2 local -->
 		<script src="js/jQueryRotate.js"></script><!--JQueryRotate local comprimida -->
 		<script src="js/jquery.easing-1.3.min.js"></script><!--JQueryEasing local comprimida -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!--Materialize Icons -->
 		<script type="text/javascript" src="js/materialize.js"></script>
-		<link rel="stylesheet" type="text/css" href="styles/materialize.css">
-		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="css/materialize.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 
- 	<body>
-    <section id="dexapp"></section>
-    <script src="js/bundle.js"></script>
-  </body>
-
-	<!-- <body class="greySection height100">
-		<nav>
+ 	<body class="greySection">
+ 		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+ 		<nav>
 	    <div class="nav-wrapper">
-	      <a href="#" class="brand-logo">TURISMO</a>
+	      <a href="#" class="brand-logo">
+	      	<img  class="navLogo" src="images/logo.png"/>
+	      </a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
 	      </ul>
 	    </div>
 	  </nav>
-		<section class="height100">
-			<p>hola</p>
-		</section>
-	</body> -->
+    <section id="turismoapp"></section>
+    <script src="js/bundle.js"></script>
+  </body>
+
 </html>

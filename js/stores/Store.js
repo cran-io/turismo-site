@@ -25,9 +25,9 @@ var Store = assign({}, EventEmitter.prototype, {
 });
 
 Store.dispatchToken = Dispatcher.register(function(payload) {
-  Dispatcher.waitFor([
-    SessionStore.dispatchToken
-  ]);
+  // Dispatcher.waitFor([
+  //   SessionStore.dispatchToken
+  // ]);
   var action = payload.action;
 
   switch(action.actionType) {
