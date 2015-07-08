@@ -8,21 +8,27 @@ var PhotoCard = React.createClass({
 
   getInitialState: function(){
     return {
-    	icons: 'hidden'
+    	icons: 'hidden',
+    	blackBackground: 'hidden'
     }
   },
   onPhotoIcons: function () {
   	this.setState({ 
-      icons: 'photoIcons valign-wrapper centered'
+      icons: 'photoIcons valign-wrapper centered',
+      blackBackground: 'blackBackground'
     });
   },
   outPhotoIcons: function () {
   	this.setState({ 
-      icons: 'hidden'
+      icons: 'hidden',
+      blackBackground: 'hidden'
     });
   },
   bigPhoto: function () {
   	console.log("click");
+  },
+  onClickShare: function () {
+  	console.log("click share");
   },
 
   render: function() {
@@ -37,10 +43,11 @@ var PhotoCard = React.createClass({
               <div className="card-image waves-effect waves-block waves-light noMargin">
                 <img className="imgCard"  src="/../turismo-site/images/office.jpg"/>
               </div>
+              <div className={this.state.blackBackground}></div>
               <div className={this.state.icons}>
               	<div className="valign white-text iconsDiv">
-              		<span className="icons-heart icon fb-share-button" data-href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQFzyV5S9XbJKJhlsjCRNyWM7Tx3sP0eDQUwJe5VD-dG_FgcZbN/" data-layout="button"></span>
-              		<span className="icons-bubble icon pull-right" id = "share_button"></span>
+              		<span className="icons-share2 icon fb-share-button" data-href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQFzyV5S9XbJKJhlsjCRNyWM7Tx3sP0eDQUwJe5VD-dG_FgcZbN/" data-layout="button"></span>
+              		<a href="/../turismo-site/images/office.jpg" download="photo1.jpg"><button className="icons-download2 icon" id = "share_button"></button></a>
               	</div>
               </div>
               
