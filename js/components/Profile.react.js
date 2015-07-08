@@ -25,7 +25,7 @@ module.exports = React.createClass({
         return(
             <div className="container height100">
                 <div className="profileHeader">
-                    <p>hola holaaaa </p>
+                    <p></p>
                 </div>
                 <div>
                     <PhotoCard />
