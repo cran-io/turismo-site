@@ -5,7 +5,7 @@ var APIRoot   = Root + "/web";
 module.exports = {
 
   ActionTypes: keyMirror({
-    // LOGIN_RESPONSE: null,
+    REDIRECT: null,
 
   }),
 

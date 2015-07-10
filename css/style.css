@@ -2,7 +2,14 @@
 	background-color: #ecf0f1;
 }
 .height100{
-	height: 100%!important;
+	min-height: 100%!important;
+	height: auto;
+}
+.width100{
+	width: 100%!important;
+}
+.width80{
+	
 }
 .profileHeader{
 	height: 150px;
@@ -14,9 +21,14 @@
 	margin-left: 0px;
 	margin-right: 0px;
 }
+margin20{
+	margin-left: 20px;
+	margin-right: 20px;	
+}
 .noMargin{
 	margin: 0px;
 }
+
 .noPadding{
 	padding: 0px;
 }
@@ -24,7 +36,22 @@
 	text-align: center;
 }
 
-
+/*PROFILE*/
+.profileContainer{
+	margin: 0px;
+}
+/*PHOTO CARD*/
+.marginCard{
+	margin:25px!important;
+	width: 280px!important;
+}
+/*PHOTO VIEW*/
+.photoView{
+	margin-top:10%;
+}
+.wCard{
+	width: 280px!important;
+}
 /*CARD*/
 .photoCard {
   position: relative;
@@ -84,6 +111,13 @@
   height:70px;
   width: 70px;
 }
+.marginCard{
+	margin:5px!important;
+	width: 80px!important;
+}
+.wCard{
+	width: 80px!important;
+}
 .imgCard{
 	height: 70px;
   width: 70px;
@@ -104,6 +138,13 @@
 }
 .profileHeader{
 	height: 50px!important;
+}
+.profileContainer{
+	margin: 30px;
+	margin-right: 30px;
+}
+.width80{
+	width: 80%!important;	
 }
 
 }
