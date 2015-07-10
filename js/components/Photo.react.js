@@ -27,7 +27,6 @@ module.exports = React.createClass({
 
 
 
-        
 
         return(
 
@@ -44,11 +43,14 @@ module.exports = React.createClass({
                         </div>
                     </div>
                     <div className="row">
-                        <div className="centered">
-                            <a className="waves-effect waves-light btn" href={photo} download="photo1.jpg">DESCARGAR IMAGEN</a>
-                            <a className="fb-share-button btn" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></a>
-                            <a href="https://twitter.com/share" className="twitter-share-button btn" data-url="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-text="Sensorium" data-size="large" data-count="none">Tweet</a>
+                        <div className="col lg6 left-align">
+                            <p className="noMargin">COMPARTIR EN:</p>
+                            <a className="fb-share-button" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></a>
+                            <a href="https://twitter.com/share" className="twitter-share-button tweetButton"  data-size="large" data-count="none">Tweet</a>
                             <div className="a2a_kit a2a_default_style"><a className="a2a_button_google_plus_share"></a></div>
+                        </div>
+                        <div className="right-align">
+                            <a className="waves-effect waves-light btn" href={photo} download="photo1.jpg">DESCARGAR IMAGEN</a>
                         </div>
                        
                     </div>

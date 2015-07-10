@@ -63,8 +63,7 @@ var PhotoCard = React.createClass({
               <div className={this.state.icons}>
               	<div className="valign white-text iconsDiv">
               		<span className="icons-share2 icon" onClick={this.onClickShare}></span>
-              		<a className="iconLink" href={photo} download="photo1.jpg"><button className="icons-download2 icon" id = "share_button"></button></a>
-                  <a className="fb-share-button" data-href="/../turismo-site/images/office.jpg" data-layout="button"></a>
+              		<a className="iconLink" href={photo} download="photo1.jpg"><i className="icons-download2 icon" id = "share_button"></i></a>
               	</div>
               </div>
               

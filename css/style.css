@@ -40,6 +40,9 @@ margin20{
 .profileContainer{
 	margin: 0px;
 }
+.icons-share2{
+	margin-right: 250%;
+}
 /*PHOTO CARD*/
 .marginCard{
 	margin:25px!important;
@@ -51,6 +54,19 @@ margin20{
 }
 .wCard{
 	width: 280px!important;
+}
+.tweetButton{
+	cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+  color:black;
+  line-height: 20px;
+  font-size: 11px;
+  padding: 4px 4px 4px 4px;
+  position: relative;
+  background-color: #bdc3c7;
+  height: 20px;
+  border-radius: 2px;
 }
 /*CARD*/
 .photoCard {
@@ -110,6 +126,9 @@ margin20{
 .photoCard { 
   height:70px;
   width: 70px;
+}
+.icons-share2{
+	margin-right: 25%;
 }
 .marginCard{
 	margin:5px!important;
