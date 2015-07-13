@@ -40,9 +40,11 @@ var PhotoCard = React.createClass({
     });
   },
   bigPhoto: function () {
+    localStorage.setItem('photo', this.props.photo);
     redirect('photo');
   },
   onClickShare: function () {
+    localStorage.setItem('photo', this.props.photo);
     redirect('photo');
   },
 

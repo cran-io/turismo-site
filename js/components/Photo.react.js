@@ -22,12 +22,7 @@ module.exports = React.createClass({
     },
 
     render: function() {
-        var photo = this.state.photo;
-//         <script type="text/javascript" src="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg"></script>
-
-// <div id="content">
-//                           <g:plusone></g:plusone>
-//                         </div>
+        var photo = localStorage.getItem('photo');
 
 
         return(
