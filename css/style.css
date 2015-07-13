@@ -30,20 +30,15 @@
 .centered{
 	text-align: center;
 }
-/*NAV*/
-/*.navLogo{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}*/
+
 /*PROFILE*/
 .profileContainer{
 	margin: 0px;
 	width: 100%;
 }
-.icons-share2{
+/*.icons-share2{
 	margin-right: 250%;
-}
+}*/
 /*PHOTO CARD*/
 
 /*PHOTO VIEW*/
@@ -97,10 +92,7 @@
   z-index: 3;
   opacity:0.4;
 }
-.iconsDiv{
-	margin-left: 20%;
-	margin-right: 20%;
-}
+
 .icon{
 	font-size: 20px;
 	color:white;
@@ -116,9 +108,9 @@
 .brand-logo{
 	margin-left: 0!important;
 }
-.icons-share2{
-	margin-right: 25%;
-}
+/*.icons-share2{
+	margin-right: 20%;
+}*/
 .marginCard{
 	margin:5px!important;
 	width: 80px!important;
@@ -166,7 +158,7 @@
 }
 
 @media (min-width: 992px) and (max-width: 1200px){ /*Para monitores md*/
-
+	/*.icons-share2{margin-right: 20%!important;}*/
 }
 
 /* portrait */
