@@ -5033,10 +5033,10 @@ span.badge {
   .container {
     width: 70%; } }
 
-.container .row {
+/*.container .row {
   margin-left: -0.75rem;
   margin-right: -0.75rem; }
-
+*/
 .section {
   padding-top: 1rem;
   padding-bottom: 1rem; }
@@ -5047,7 +5047,7 @@ span.badge {
   .section.no-pad-top {
     padding-top: 0; }
 
-.row {
+/*.row {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px; }
@@ -5120,7 +5120,7 @@ span.badge {
     .row .col.offset-s11 {
       margin-left: 91.66667%; }
     .row .col.offset-s12 {
-      margin-left: 100%; }
+      margin-left: 100%; }*/
     @media only screen and (min-width : 601px) {
       .row .col.m1 {
         width: 8.33333%;

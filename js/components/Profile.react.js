@@ -31,13 +31,19 @@ module.exports = React.createClass({
         }
 
         return(
-            <div className="container height100 width100 noMargin profileContainer">
-                <div className="profileHeader">
-                    <p></p>
+            <div className="container profileContainer">
+                <div className="row">
+                    <div className="col-lg-offset-1 col-lg-10">
+                        <div className="profileHeader">
+                            <p></p>
+                        </div>
+                        <div className= "row centered">
+                            {allPhotos}
+                        </div>
+                    </div>
                 </div>
-                <div className= "row centered width100">
-                    {allPhotos}
-                </div>
+                
+                
             </div>
         )
     }
