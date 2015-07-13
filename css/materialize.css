@@ -5019,11 +5019,11 @@ span.badge {
 
 .mdi-toggle-star:before {
   content: "\e8f5"; }
-
+/*
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%; }
+  width: 90%; }*/
 
 @media only screen and (min-width : 601px) {
   .container {
@@ -5033,10 +5033,10 @@ span.badge {
   .container {
     width: 70%; } }
 
-.container .row {
+/*.container .row {
   margin-left: -0.75rem;
   margin-right: -0.75rem; }
-
+*/
 .section {
   padding-top: 1rem;
   padding-bottom: 1rem; }
@@ -5047,7 +5047,7 @@ span.badge {
   .section.no-pad-top {
     padding-top: 0; }
 
-.row {
+/*.row {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px; }
@@ -5120,7 +5120,7 @@ span.badge {
     .row .col.offset-s11 {
       margin-left: 91.66667%; }
     .row .col.offset-s12 {
-      margin-left: 100%; }
+      margin-left: 100%; }*/
     @media only screen and (min-width : 601px) {
       .row .col.m1 {
         width: 8.33333%;
@@ -5248,13 +5248,13 @@ nav {
   color: #7f8c8d;
   background-color: #004783;
   width: 100%;
-  height: 56px;
-  line-height: 56px; }
+  height: 100px;
+  line-height: 100px; }
   nav a {
     color: #7f8c8d; }
   nav .nav-wrapper {
     position: relative;
-    height: 100%; }
+    height: 100px; }
     nav .nav-wrapper i {
       display: block;
       font-size: 2rem; }
@@ -5265,11 +5265,11 @@ nav {
     float: left;
     position: relative;
     z-index: 1;
-    height: 56px; }
+    height: 100px; }
     nav .button-collapse i {
       font-size: 2.7rem;
-      height: 56px;
-      line-height: 56px; }
+      height: 100px;
+      line-height: 100px; }
   nav .brand-logo {
     position: absolute;
     color: #7f8c8d;
@@ -5345,15 +5345,15 @@ nav {
 
 .navbar-fixed {
   position: relative;
-  height: 56px;
+  height: 100px;
   z-index: 998; }
   .navbar-fixed nav {
     position: fixed; }
 
 @media only screen and (min-width : 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 70px;
-    line-height: 70px; }
+    height: 100px;
+    line-height: 100px; }
   .navbar-fixed {
     height: 70px; } }
 
