@@ -16,6 +16,10 @@ var PhotoCard = React.createClass({
   },
   componentDidMount: function() {
     RouteStore.addChangeListener(this._onChange);
+       $('.wCard').css('height',($('.wCard').width()));
+      $('.imgCard').css('height',($('.imgCard').width()));
+      $('.card-image').css('height',($('.card-image').width()));
+      
   },
     
   componentWillUnmount: function() {
@@ -24,6 +28,9 @@ var PhotoCard = React.createClass({
   _onChange: function() {
 
     if (this.isMounted()) {
+      $('.wCard').css('height',($('.wCard').width()));
+      $('.imgCard').css('height',($('.imgCard').width()));
+      $('.card-image').css('height',($('.card-image').width()));
     }
   },
 

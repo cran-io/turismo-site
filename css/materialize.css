@@ -5800,7 +5800,8 @@ small {
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #27AAE1; }
+    background-color: #27AAE1;
+    color: #fff; }
 
 .btn-floating {
   display: inline-block;

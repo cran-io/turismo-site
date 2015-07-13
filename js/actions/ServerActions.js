@@ -1,13 +1,14 @@
-// var Dispatcher  = require ('../dispatcher/Dispatcher');
-// var ActionTypes   = require ('../constants/Constants').ActionTypes;
+var Dispatcher  = require ('../dispatcher/Dispatcher');
+var ActionTypes   = require ('../constants/Constants').ActionTypes;
 
-// module.exports = {
+module.exports = {
 
-// 	storeOnePhoto: function(photo) {
-// 		Dispatcher.handleServerAction({
-// 			actionType: ActionTypes.STORE_ONE_PHOTO,
-// 			res: res,
-// 		});
-// 	},
+	storePhotos: function(photos) {
 
-// }
+		Dispatcher.handleServerAction({
+			actionType: ActionTypes.STORE_PHOTOS,
+			res: photos
+		});
+	},
+
+}

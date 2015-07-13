@@ -30,7 +30,9 @@
 .centered{
 	text-align: center;
 }
-
+.footer{
+	height: 150px!important;
+}
 /*PROFILE*/
 .profileContainer{
 	margin: 0px;
@@ -47,6 +49,13 @@
 }
 .fb-share-button{
 	height: 20px;
+}
+.downloadMargin{
+	margin-top: 20px;
+}
+.fbMargin{
+	margin-left: 10px;
+	margin-right: 10px;
 }
 /*CARD*/
 .photoCard {
@@ -139,10 +148,14 @@
 	margin-right: auto;
 }
 .profileHeader{
-	height: 50px!important;
+	min-height: 50px!important;
+	height: auto;
 	padding-top: 20px!important;
+	margin-top: 0!important;
 }
-
+.tags{
+	margin: 5px!important;
+}
 
 
 }
