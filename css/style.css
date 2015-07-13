@@ -1,9 +1,14 @@
+.tags{
+	margin: 20px;
+}
+
 .greySection{
 	background-color: #ecf0f1;
 }
 
 .profileHeader{
 	height: 150px;
+	margin-top: 70px;
 }
 .noDisplay{
 	display: none;
@@ -29,6 +34,7 @@
 /*PROFILE*/
 .profileContainer{
 	margin: 0px;
+	width: 100%;
 }
 .icons-share2{
 	margin-right: 250%;
@@ -39,19 +45,8 @@
 .photoView{
 	margin-top:10%;
 }
-
-.tweetButton{
-	cursor: pointer;
-  font-weight: bold;
-  white-space: nowrap;
-  color:black;
-  line-height: 20px;
-  font-size: 11px;
-  padding: 4px 4px 4px 4px;
-  position: relative;
-  background-color: #bdc3c7;
-  height: 20px;
-  border-radius: 2px;
+.fb-share-button{
+	height: 20px;
 }
 /*CARD*/
 .photoCard {
@@ -113,7 +108,9 @@
 }
 
 @media (max-width: 767px) { /*Para monitores xs*/
-
+.brand-logo{
+	margin-left: 0!important;
+}
 .icons-share2{
 	margin-right: 25%;
 }
@@ -143,13 +140,16 @@
 }
 .profileHeader{
 	height: 50px!important;
+	padding-top: 20px!important;
 }
 
 
 
 }
 @media (min-width: 768px) and (max-width: 991px) { /*Para monitores sm*/
-
+	.brand-logo{
+	margin-left: 0!important;
+}
 
 }
 @media (min-width: 1600px){ /*Para monitores de resolucion muy grande*/
@@ -216,7 +216,10 @@
 }
 
 .navLogo{
-	margin-top: 6px;
-	margin-left: 20px;
+/*	margin-top: 6px;*/
+/*	margin-left: -30%;*/
 	height:56px;
+}
+.brand-logo{
+	margin-left: -10%;
 }

@@ -34,8 +34,11 @@ module.exports = React.createClass({
             <div className="container profileContainer">
                 <div className="row">
                     <div className="col-lg-offset-1 col-lg-10">
-                        <div className="profileHeader">
-                            <p></p>
+                        <div className="profileHeader  centered">
+                            <a className="btn tags " >#CHROMA</a>
+                            <a className="btn tags" >#EXPERTO EN VIAJES</a>
+                            <a className="btn tags" >#DOMO</a>
+                            
                         </div>
                         <div className= "row centered">
                             {allPhotos}

@@ -25,15 +25,18 @@
 	</head>
 
  	<body class="greySection">
+
  		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
+		  if (d.getElementById('1473161532996355')) return;
 		  js = d.createElement(s); js.id = '1473161532996355';
-		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+		  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=1473161532996355";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-		<script>
+
+		<!--
+			<script>
 		  window.fbAsyncInit = function() {
 		    FB.init({
 		      appId      : 1473161532996355,
@@ -50,23 +53,23 @@
 		     fjs.parentNode.insertBefore(js, fjs);
 		   }(document, 'script', 'facebook-jssdk'));
 		</script>
+		-->
+		
+
  		<nav>
-	    <div class="nav-wrapper">
+	    <div class="nav-wrapper centered">
 	      <a href="#" class="brand-logo">
 	      	<img  class="navLogo" src="images/logo.png"/>
 	      </a>
-	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	      </ul>
 	    </div>
 	  </nav>
-    <section id="turismoapp"></section>
-    <script src="js/bundle.js"></script>
-    <div id="content">
-      <g:plusone></g:plusone>
-    </div>
-    <script type="text/javascript">
+	  <script type="text/javascript">
       gapi.plusone.go("content");
     </script>
+    <section id="turismoapp"></section>
+    <script src="js/bundle.js"></script>
+    
+    
   </body>
 
 </html>
