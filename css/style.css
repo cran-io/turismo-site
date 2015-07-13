@@ -30,7 +30,12 @@
 .centered{
 	text-align: center;
 }
-
+/*NAV*/
+/*.navLogo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}*/
 /*PROFILE*/
 .profileContainer{
 	margin: 0px;
@@ -137,6 +142,9 @@
 }
 .navLogo{
 	height:45px!important;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .profileHeader{
 	height: 50px!important;
@@ -220,6 +228,4 @@
 /*	margin-left: -30%;*/
 	height:56px;
 }
-.brand-logo{
-	margin-left: -10%;
-}
+

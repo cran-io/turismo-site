@@ -5271,7 +5271,7 @@ nav {
       height: 100px;
       line-height: 100px; }
   nav .brand-logo {
-    position: absolute;
+    /*position: absolute;*/
     color: #7f8c8d;
     display: inline-block;
     font-size: 2.1rem;
@@ -5293,7 +5293,7 @@ nav {
         -o-transform: translateX(-50%);
         transform: translateX(-50%); } }
     nav .brand-logo.right {
-      right: 0.5rem;
+      /*right: 0.5rem;*/
       padding: 0; }
   nav ul {
     margin: 0; }
