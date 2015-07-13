@@ -4,10 +4,10 @@ var PhotoStore   = require('../stores/Store');
 
 module.exports = React.createClass({
 
-  
+
     componentWillMount: function(){
-     
-      
+
+
     },
     componentDidMount: function() {
       var js,fjs=document.getElementsByTagName('script')[0],p=/^http:/.test(document.location)?'http':'https';
@@ -17,20 +17,39 @@ module.exports = React.createClass({
           js.src=p+'://platform.twitter.com/widgets.js';
           fjs.parentNode.insertBefore(js,fjs);
       };
+
+      if (window.fbAsyncInit) {
+        window.fbAsyncInit();
+      } else {
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : 1473161532996355,
+            xfbml      : true,
+            version    : 'v2.4'
+          });
+        };
+      }
+
+  		(function(d, s, id){
+  				var js, fjs = d.getElementsByTagName(s)[0];
+  				if (d.getElementById(id)) {return;}
+  				js = d.createElement(s); js.id = id;
+  				js.src = "//connect.facebook.net/en_US/sdk.js";
+  				fjs.parentNode.insertBefore(js, fjs);
+  			}(document, 'script', 'facebook-jssdk'));
     },
 
     componentWillUnmount: function() {
-
     },
     _onChange: function() {
-   
-  
-        
+
+
+
     },
 
     render: function() {
         var photo = localStorage.getItem('photo');
-        
+
         return(
 
             <div className="container height100">
@@ -50,21 +69,17 @@ module.exports = React.createClass({
                             <p className="noMargin">COMPARTIR EN:</p>
                             <a className="fb-share-button fbMargin" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></a>
                             <a href="https://twitter.com/share" data-url={photo} className="twitter-share-button fbMargin"  data-size="default" data-count="none"></a>
-                            
+
                         </div>
                         <div className="col-lg-12 col-xs-12 center-align downloadMargin">
                             <a className="waves-effect waves-light btn" href={photo} download="photo1.jpg">DESCARGAR IMAGEN</a>
                         </div>
                         <div className="footer">
-                           
+
                         </div>
-                        
+
                     </div>
                 </div>
-                <div>
-                       
-                </div>
-
             </div>
         )
     }
