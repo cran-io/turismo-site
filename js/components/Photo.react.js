@@ -71,8 +71,8 @@ module.exports = React.createClass({
                 <meta property="og:description"        content="description" />
                 <meta property="og:image"              content="http://cran.io/images/cranio.jpg" />
 
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:site" content="@turismosite"/>
+                <meta name="twitter:card" content="summary"/>
+                <meta name="twitter:site" content="@maikolde"/>
                 <meta name="twitter:title" content="Turismo Site"/>
                 <meta name="twitter:description" content="Turismo"/>
                 <meta name="twitter:image" content="https://dl.dropboxusercontent.com/u/443545873/04.jpg"/>
