@@ -1,6 +1,10 @@
-var React                        = require('react');
-var Store                        = require('../stores/Store');
-var PhotoCard                    = require('./PhotoCard.react');
+var React                          = require('react');
+var Store                          = require('../stores/Store');
+var PhotoCard                      = require('./PhotoCard.react');
+var getServerPhotos                = require('../actions/Actions').getServerPhotos;
+var getServerChromaPhotos          = require('../actions/Actions').getServerChromaPhotos;
+var getServerExpertoEnViajesPhotos = require('../actions/Actions').getServerExpertoEnViajesPhotos;
+var getServerDomoPhotos            = require('../actions/Actions').getServerDomoPhotos;
 
 
 module.exports = React.createClass({
@@ -13,13 +17,34 @@ module.exports = React.createClass({
     componentWillMount: function(){
     },
     componentDidMount: function() {
+        getServerPhotos();
+        Store.addChangeListener(this._onChange);
     },
 
     componentWillUnmount: function() {
+        Store.removeChangeListener(this._onChange);
 
     },
+    todasLasFotos: function() {
+        getServerPhotos();
+    },
+    chroma: function() {
+        getServerChromaPhotos();
+    },
+    expertoEnViajes: function() {
+        getServerExpertoEnViajesPhotos();
+    },
+    domo: function() {
+        getServerDomoPhotos();
+    },
+   
     _onChange: function() {
-
+        if (this.isMounted()) {
+            
+            this.setState({
+            photos: Store.getPhotos()
+            });
+        }
     },
 
     render: function() {
@@ -35,9 +60,11 @@ module.exports = React.createClass({
                 <div className="row">
                     <div className="col-lg-offset-1 col-lg-10">
                         <div className="profileHeader  centered">
-                            <a className="btn tags " >#CHROMA</a>
-                            <a className="btn tags" >#EXPERTO EN VIAJES</a>
-                            <a className="btn tags" >#DOMO</a>
+                            <a className="btn tags" onClick={this.todasLasFotos} >TODAS LAS FOTOS</a>
+                            <a className="btn tags" onClick={this.chroma} >#CHROMA</a>
+                            <a className="btn tags" onClick={this.expertoEnViajes}>#EXPERTO EN VIAJES</a>
+                            <a className="btn tags" onClick={this.domo}>#DOMO</a>
+
                             
                         </div>
                         <div className= "row centered">

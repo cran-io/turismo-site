@@ -10,12 +10,16 @@ var PhotoCard = React.createClass({
 
   getInitialState: function(){
     return {
-    	icons: 'hidden',
+    	icons: 'photoIcons valign-wrapper centered',
     	blackBackground: 'hidden'
     }
   },
   componentDidMount: function() {
     RouteStore.addChangeListener(this._onChange);
+       $('.wCard').css('height',($('.wCard').width()));
+      $('.imgCard').css('height',($('.imgCard').width()));
+      $('.card-image').css('height',($('.card-image').width()));
+      
   },
     
   componentWillUnmount: function() {
@@ -24,6 +28,9 @@ var PhotoCard = React.createClass({
   _onChange: function() {
 
     if (this.isMounted()) {
+      $('.wCard').css('height',($('.wCard').width()));
+      $('.imgCard').css('height',($('.imgCard').width()));
+      $('.card-image').css('height',($('.card-image').width()));
     }
   },
 
@@ -35,14 +42,16 @@ var PhotoCard = React.createClass({
   },
   outPhotoIcons: function () {
   	this.setState({ 
-      icons: 'hidden',
+      icons: 'photoIcons valign-wrapper centered',
       blackBackground: 'hidden'
     });
   },
   bigPhoto: function () {
+    localStorage.setItem('photo', this.props.photo);
     redirect('photo');
   },
   onClickShare: function () {
+    localStorage.setItem('photo', this.props.photo);
     redirect('photo');
   },
 
@@ -57,9 +66,10 @@ var PhotoCard = React.createClass({
          </div>
           <div className={this.state.blackBackground}></div>
           <div className={this.state.icons}>
-          	<div className="valign white-text iconsDiv">
-          		<span className="icons-share2 icon" onClick={this.onClickShare}></span>
-          		<a className="iconLink" href={photo} download="photo1.jpg"><i className="icons-download2 icon" id = "share_button"></i></a>
+          	<div className="valign white-text iconsDiv col-lg-12 col-xs-12">
+              <div className="col-lg-6 col-xs-6 centered"><span className="icons-share2 icon" onClick={this.onClickShare}></span></div>
+              <div className="col-lg-6 col-xs-6 centered"><a className="iconLink" href={photo} download="photo1.jpg"><i className="icons-download2 icon" id = "share_button"></i></a></div>
+              
           	</div>
           </div>
           

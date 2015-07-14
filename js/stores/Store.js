@@ -8,29 +8,7 @@ var CHANGE_EVENT = 'change';
 var router = require('../router');
 
 var photos =[];
-photos.push("/../turismo-site/images/01.jpg");
-photos.push("/../turismo-site/images/02.jpg");
-photos.push("/../turismo-site/images/03.jpg");
-photos.push("/../turismo-site/images/04.jpg");
-photos.push("/../turismo-site/images/05.jpg");
-photos.push("/../turismo-site/images/06.jpg");
-photos.push("/../turismo-site/images/07.jpg");
-photos.push("/../turismo-site/images/08.jpg");
-photos.push("/../turismo-site/images/09.jpg");
-photos.push("/../turismo-site/images/10.jpg");
-photos.push("/../turismo-site/images/11.jpg");
-photos.push("/../turismo-site/images/12.jpg");
-photos.push("/../turismo-site/images/13.jpg");
-photos.push("/../turismo-site/images/14.jpg");
-photos.push("/../turismo-site/images/15.jpg");
-photos.push("/../turismo-site/images/16.jpg");
-photos.push("/../turismo-site/images/17.jpg");
-photos.push("/../turismo-site/images/18.jpg");
-photos.push("/../turismo-site/images/19.jpg");
-photos.push("/../turismo-site/images/20.jpg");
-photos.push("/../turismo-site/images/21.jpg");
-photos.push("/../turismo-site/images/22.jpg");
-photos.push("/../turismo-site/images/23.jpg");
+
 
 var Store = assign({}, EventEmitter.prototype, {
 
@@ -52,22 +30,19 @@ var Store = assign({}, EventEmitter.prototype, {
 });
 
 Store.dispatchToken = Dispatcher.register(function(payload) {
-  // Dispatcher.waitFor([
-  //   SessionStore.dispatchToken
-  // ]);
+
   var action = payload.action;
 
   switch(action.actionType) {
 
-    case ActionTypes.SHOW_ENTITY:
-      // if (SessionStore.isLoggedIn()) {
-      //   _entity= action.res;
-      //   _textError = '';
-      //   _errorCode = '';
-      //   _editing= false;
-      //   localStorage.setItem('entityId', _entity.object_id);
-      //   Store.emitChange();
+    case ActionTypes.STORE_PHOTOS:
+      var response = action.res;
+      photos =response;
+      // for (var key in response) {
+      //   photos.push(response[key]);
       // }
+
+      Store.emitChange();
     break;
 
 

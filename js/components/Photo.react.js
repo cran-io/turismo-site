@@ -4,39 +4,78 @@ var PhotoStore   = require('../stores/Store');
 
 module.exports = React.createClass({
 
-    getInitialState: function(){
-        return {
-            photo: '/../turismo-site/images/office.jpg'
-        };
-    },
+
     componentWillMount: function(){
+
+
     },
     componentDidMount: function() {
+      if (window.twttr) {
+        window.twttr.widgets.load()
+      } else {
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+
+          return t;
+        }(document, "script", "twitter-wjs"));
+      }
+
+      if (window.fbAsyncInit) {
+        window.fbAsyncInit();
+      } else {
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : 1473161532996355,
+            xfbml      : true,
+            version    : 'v2.4'
+          });
+        };
+      }
+
+  		(function(d, s, id){
+  				var js, fjs = d.getElementsByTagName(s)[0];
+  				if (d.getElementById(id)) {return;}
+  				js = d.createElement(s); js.id = id;
+  				js.src = "//connect.facebook.net/en_US/sdk.js";
+  				fjs.parentNode.insertBefore(js, fjs);
+  			}(document, 'script', 'facebook-jssdk'));
     },
 
     componentWillUnmount: function() {
-
     },
     _onChange: function() {
+
+
 
     },
 
     render: function() {
-        var photo = this.state.photo;
-        <script type="text/javascript" src="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg"></script>
-
-// <div id="content">
-//                           <g:plusone></g:plusone>
-//                         </div>
-
+        var photo = localStorage.getItem('photo');
 
         return(
 
             <div className="container height100">
-            <meta property="og:type"               content="photo" />
-            <meta property="og:title"              content="Photo" />
-            <meta property="og:description"        content="description" />
-            <meta property="og:image"              content="http://cran.io/images/cranio.jpg" />
+                <meta property="og:type"               content="photo" />
+                <meta property="og:title"              content="Photo" />
+                <meta property="og:description"        content="description" />
+                <meta property="og:image"              content="http://cran.io/images/cranio.jpg" />
+
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:site" content="@turismosite"/>
+                <meta name="twitter:title" content="Turismo Site"/>
+                <meta name="twitter:description" content="Turismo"/>
+                <meta name="twitter:image" content={photo}/>
 
                 <div className="photoView centered">
                     <div className="row">
@@ -45,21 +84,20 @@ module.exports = React.createClass({
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-6 left-align">
+                        <div className="col-lg-offset-3 col-lg-6 col-xs-offset-2 col-xs-8 center-align">
                             <p className="noMargin">COMPARTIR EN:</p>
-                            <div className="fb-share-button" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></div>
-                            <a className="fb-share-button" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></a>
-                            <a href="https://twitter.com/share" className="twitter-share-button"  data-size="large" data-count="none">Tweet</a>
-                            <div className="a2a_kit a2a_default_style"><a className="a2a_button_google_plus_share"></a></div>
+                            <a className="fb-share-button fbMargin" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></a>
+                            <a href="https://twitter.com/intent/tweet?url=http://cran-io.github.io/turismo-site/#/" className="twitter-share-button fbMargin"  data-size="default" data-count="none"></a>
+
                         </div>
-                        <div className="right-align">
+                        <div className="col-lg-12 col-xs-12 center-align downloadMargin">
                             <a className="waves-effect waves-light btn" href={photo} download="photo1.jpg">DESCARGAR IMAGEN</a>
                         </div>
-                        
+                        <div className="footer">
+
+                        </div>
+
                     </div>
-                </div>
-                <div>
-                   
                 </div>
             </div>
         )
