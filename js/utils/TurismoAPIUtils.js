@@ -9,7 +9,6 @@ module.exports = {
 
 //GET  
   getPhotos: function(page) {
-    console.log("api utls", page);
     request
       .get(APIEndpoints.PUBLIC +'/images?page='+ page )
       .set('Accept', 'aplication/json')
@@ -23,31 +22,43 @@ module.exports = {
        
       })
   },
-  getChromaPhotos: function() {
+  getChromaPhotos: function(page) {
     request
       .get(APIEndpoints.PUBLIC +'/images?category=chroma' )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
-        storePhotos(text);
+        if(page==1){
+          storePhotos(text);
+        }else{
+          addPhotos(text);
+        }
       })
   },
-  getExpertoEnViajesPhotos: function() {
+  getExpertoEnViajesPhotos: function(page) {
     request
       .get(APIEndpoints.PUBLIC +'/images?category=expertoEnViajes' )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
-        storePhotos(text);
+        if(page==1){
+          storePhotos(text);
+        }else{
+          addPhotos(text);
+        }
       })
   },
-  getDomoPhotos: function() {
+  getDomoPhotos: function(page) {
     request
       .get(APIEndpoints.PUBLIC +'/images?category=domo' )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
-        storePhotos(text);
+        if(page==1){
+          storePhotos(text);
+        }else{
+          addPhotos(text);
+        }
       })
   },
 

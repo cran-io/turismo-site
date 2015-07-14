@@ -46,7 +46,6 @@ Store.dispatchToken = Dispatcher.register(function(payload) {
       for (var key in response) {
         photos.push(response[key]);
       };
-      console.log(photos);
       Store.emitChange();
     break;
 

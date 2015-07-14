@@ -12,13 +12,14 @@ module.exports = React.createClass({
     getInitialState: function(){
         return {
             photos: Store.getPhotos(),
-            page: 1
+            page: 1,
+            buttonDivClass: "centered buttonDiv valign-wrapper"
         };
     },
     componentWillMount: function(){
     },
     componentDidMount: function() {
-        getServerPhotos(this.state.page);
+        getServerPhotos(1);
         Store.addChangeListener(this._onChange);
     },
 
@@ -27,20 +28,19 @@ module.exports = React.createClass({
 
     },
     todasLasFotos: function() {
-        getServerPhotos();
+        getServerPhotos(1);
     },
     chroma: function() {
-        getServerChromaPhotos();
+        getServerChromaPhotos(1);
     },
     expertoEnViajes: function() {
-        getServerExpertoEnViajesPhotos();
+        getServerExpertoEnViajesPhotos(1);
     },
     domo: function() {
-        getServerDomoPhotos();
+        getServerDomoPhotos(1);
     },
     loadMore: function() {
         var pageCounter = parseInt(this.state.page) + parseInt(1);
-        console.log(pageCounter);
         this.setState({
             page: pageCounter
         });
@@ -49,17 +49,22 @@ module.exports = React.createClass({
     },
    
     _onChange: function() {
-        if (this.isMounted()) {
-            
+        if (this.isMounted()) {            
             this.setState({
             photos: Store.getPhotos()
             });
         }
+        if(this.state.photos == null || this.state.photos.length == 0){
+            this.setState({
+                buttonDivClass: "hidden"
+            });  
+        };
     },
 
     render: function() {
         var photos = this.state.photos;
         var allPhotos = [];
+        
 
         for (var key in photos) {
             allPhotos.push(<PhotoCard key={key} photo={photos[key]} />);
@@ -80,7 +85,7 @@ module.exports = React.createClass({
                         <div className= "row centered">
                             {allPhotos}
                         </div>
-                        <div className="centered buttonDiv valign-wrapper  ">
+                        <div className={this.state.buttonDivClass}>
                             <a className="btnMore centered center-block valign" onClick={this.loadMore}>CARGAR MAS</a>
                         </div>
                         

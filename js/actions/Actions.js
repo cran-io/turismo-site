@@ -4,17 +4,16 @@ module.exports = {
 
 
 	getServerPhotos: function(page) {
-		console.log("action");
 		TurismoAPIUtils.getPhotos(page);
 	},
-	getServerChromaPhotos: function() {
-		TurismoAPIUtils.getChromaPhotos();
+	getServerChromaPhotos: function(page) {
+		TurismoAPIUtils.getChromaPhotos(page);
 	},
-	getServerExpertoEnViajesPhotos: function() {
-		TurismoAPIUtils.getExpertoEnViajesPhotos();
+	getServerExpertoEnViajesPhotos: function(page) {
+		TurismoAPIUtils.getExpertoEnViajesPhotos(page);
 	},
-	getServerDomoPhotos: function() {
-		TurismoAPIUtils.getDomoPhotos();
+	getServerDomoPhotos: function(page) {
+		TurismoAPIUtils.getDomoPhotos(page);
 	},
 
 
