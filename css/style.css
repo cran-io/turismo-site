@@ -51,6 +51,7 @@
   text-decoration: none;
   color: #27AAE1;
   border: solid #27AAE1 4px;
+  cursor: pointer;
 }
 
 .buttonDiv{

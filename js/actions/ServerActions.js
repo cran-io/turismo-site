@@ -10,5 +10,12 @@ module.exports = {
 			res: photos
 		});
 	},
+	addPhotos: function(photos) {
+		console.log("constant", photos);
+		Dispatcher.handleServerAction({
+			actionType: ActionTypes.ADD_PHOTOS,
+			res: photos
+		});
+	},
 
 }

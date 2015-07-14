@@ -38,10 +38,15 @@ Store.dispatchToken = Dispatcher.register(function(payload) {
     case ActionTypes.STORE_PHOTOS:
       var response = action.res;
       photos =response;
-      // for (var key in response) {
-      //   photos.push(response[key]);
-      // }
+      Store.emitChange();
+    break;
 
+    case ActionTypes.ADD_PHOTOS:
+      var response = action.res;
+      for (var key in response) {
+        photos.push(response[key]);
+      };
+      console.log(photos);
       Store.emitChange();
     break;
 

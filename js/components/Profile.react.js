@@ -11,13 +11,14 @@ module.exports = React.createClass({
 
     getInitialState: function(){
         return {
-            photos: Store.getPhotos()
+            photos: Store.getPhotos(),
+            page: 1
         };
     },
     componentWillMount: function(){
     },
     componentDidMount: function() {
-        getServerPhotos();
+        getServerPhotos(this.state.page);
         Store.addChangeListener(this._onChange);
     },
 
@@ -38,6 +39,12 @@ module.exports = React.createClass({
         getServerDomoPhotos();
     },
     loadMore: function() {
+        var pageCounter = parseInt(this.state.page) + parseInt(1);
+        console.log(pageCounter);
+        this.setState({
+            page: pageCounter
+        });
+        getServerPhotos(pageCounter);
         
     },
    

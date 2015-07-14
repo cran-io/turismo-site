@@ -2,18 +2,25 @@ var request             = require('superagent');
 var Constants           = require('../constants/Constants');
 var APIEndpoints        = Constants.APIEndpoints;
 var storePhotos         = require('../actions/ServerActions').storePhotos;
+var addPhotos           = require('../actions/ServerActions').addPhotos;
 
 module.exports = {
 
 
 //GET  
-  getPhotos: function() {
+  getPhotos: function(page) {
+    console.log("api utls", page);
     request
-      .get(APIEndpoints.PUBLIC +'/images' )
+      .get(APIEndpoints.PUBLIC +'/images?page='+ page )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
-        storePhotos(text);
+        if(page==1){
+          storePhotos(text);
+        }else{
+          addPhotos(text);
+        }
+       
       })
   },
   getChromaPhotos: function() {

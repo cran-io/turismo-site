@@ -74,7 +74,7 @@ module.exports = React.createClass({
                     <div className="row">
                         <div className="col-lg-offset-3 col-lg-6 col-xs-offset-2 col-xs-8 center-align">
                             <p className="noMargin">COMPARTIR EN:</p>
-                            <a className="fb-share-button fbMargin" data-href="http://labrujeriablanca.com/wp-content/uploads/2015/04/flores02.jpg" data-layout="button"></a>
+                            <a className="fb-share-button fbMargin" data-href={photo} data-layout="button"></a>
                             <a href="https://twitter.com/intent/tweet" className="twitter-share-button fbMargin"  data-size="default" data-count="none"></a>
 
                         </div>
