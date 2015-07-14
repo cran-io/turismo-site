@@ -75,7 +75,7 @@ module.exports = React.createClass({
                 <meta name="twitter:site" content="@turismosite"/>
                 <meta name="twitter:title" content="Turismo Site"/>
                 <meta name="twitter:description" content="Turismo"/>
-                <meta name="twitter:image" content={photo}/>
+                <meta name="twitter:image" content="https://dl.dropboxusercontent.com/u/443545873/04.jpg"/>
 
                 <div className="photoView centered">
                     <div className="row">
