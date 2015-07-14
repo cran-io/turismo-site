@@ -37,6 +37,9 @@ module.exports = React.createClass({
     domo: function() {
         getServerDomoPhotos();
     },
+    loadMore: function() {
+        
+    },
    
     _onChange: function() {
         if (this.isMounted()) {
@@ -70,6 +73,10 @@ module.exports = React.createClass({
                         <div className= "row centered">
                             {allPhotos}
                         </div>
+                        <div className="centered buttonDiv valign-wrapper  ">
+                            <a className="btnMore centered center-block valign" onClick={this.loadMore}>CARGAR MAS</a>
+                        </div>
+                        
                     </div>
                 </div>
                 
