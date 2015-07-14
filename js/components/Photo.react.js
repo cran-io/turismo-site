@@ -66,12 +66,6 @@ module.exports = React.createClass({
         return(
 
             <div className="container height100">
-                <meta name="twitter:card" content="summary"/>
-                <meta name="twitter:site" content="@maikolde"/>
-                <meta name="twitter:title" content="Turismo Site"/>
-                <meta name="twitter:description" content="Turismo"/>
-                <meta name="twitter:image" content="https://dl.dropboxusercontent.com/u/443545873/04.jpg"/>
-
                 <div className="photoView centered">
                     <div className="row">
                         <div className="centered">
