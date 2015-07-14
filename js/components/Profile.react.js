@@ -13,7 +13,11 @@ module.exports = React.createClass({
         return {
             photos: Store.getPhotos(),
             page: 1,
-            buttonDivClass: "centered buttonDiv valign-wrapper"
+            buttonDivClass: "centered buttonDiv valign-wrapper",
+            todas: true,
+            domo: false,
+            experto: false,
+            chroma: false
         };
     },
     componentWillMount: function(){
@@ -28,15 +32,27 @@ module.exports = React.createClass({
 
     },
     todasLasFotos: function() {
+        this.setState({
+            page: 1
+        });
         getServerPhotos(1);
     },
     chroma: function() {
+        this.setState({
+            page: 1
+        });
         getServerChromaPhotos(1);
     },
     expertoEnViajes: function() {
+        this.setState({
+            page: 1
+        });
         getServerExpertoEnViajesPhotos(1);
     },
     domo: function() {
+        this.setState({
+            page: 1
+        });
         getServerDomoPhotos(1);
     },
     loadMore: function() {
@@ -44,7 +60,16 @@ module.exports = React.createClass({
         this.setState({
             page: pageCounter
         });
-        getServerPhotos(pageCounter);
+        if(this.state.todas){
+            getServerPhotos(pageCounter);
+        }else if(this.state.chroma){
+            getServerChromaPhotos(pageCounter);
+        }else if(this.state.experto){
+            getServerExpertoEnViajesPhotos(pageCounter);
+        }else if(this.state.domo){
+            getServerDomoPhotos(pageCounter);
+        }
+       
         
     },
    
@@ -58,7 +83,11 @@ module.exports = React.createClass({
             this.setState({
                 buttonDivClass: "hidden"
             });  
-        };
+        }else{
+            this.setState({
+                buttonDivClass: "centered buttonDiv valign-wrapper"
+            }); 
+        }
     },
 
     render: function() {

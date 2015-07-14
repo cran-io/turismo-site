@@ -24,7 +24,7 @@ module.exports = {
   },
   getChromaPhotos: function(page) {
     request
-      .get(APIEndpoints.PUBLIC +'/images?category=chroma' )
+      .get(APIEndpoints.PUBLIC +'/images?category=chroma&page='+ page )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
@@ -37,7 +37,7 @@ module.exports = {
   },
   getExpertoEnViajesPhotos: function(page) {
     request
-      .get(APIEndpoints.PUBLIC +'/images?category=expertoEnViajes' )
+      .get(APIEndpoints.PUBLIC +'/images?category=experto='+ page )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
@@ -50,7 +50,7 @@ module.exports = {
   },
   getDomoPhotos: function(page) {
     request
-      .get(APIEndpoints.PUBLIC +'/images?category=domo' )
+      .get(APIEndpoints.PUBLIC +'/images?category=domo&page='+ page )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
