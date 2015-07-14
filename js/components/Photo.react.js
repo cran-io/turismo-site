@@ -66,11 +66,6 @@ module.exports = React.createClass({
         return(
 
             <div className="container height100">
-                <meta property="og:type"               content="photo" />
-                <meta property="og:title"              content="Photo" />
-                <meta property="og:description"        content="description" />
-                <meta property="og:image"              content="http://cran.io/images/cranio.jpg" />
-
                 <meta name="twitter:card" content="summary"/>
                 <meta name="twitter:site" content="@maikolde"/>
                 <meta name="twitter:title" content="Turismo Site"/>
