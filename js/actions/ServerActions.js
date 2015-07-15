@@ -10,5 +10,11 @@ module.exports = {
 			res: photos
 		});
 	},
+	addPhotos: function(photos) {
+		Dispatcher.handleServerAction({
+			actionType: ActionTypes.ADD_PHOTOS,
+			res: photos
+		});
+	},
 
 }

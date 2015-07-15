@@ -7,6 +7,7 @@ module.exports = {
   ActionTypes: keyMirror({
     REDIRECT: null,
     STORE_PHOTOS: null,
+    ADD_PHOTOS: null,
 
   }),
 

@@ -33,6 +33,32 @@
 .footer{
 	height: 150px!important;
 }
+/*CARBAR MAS BUTTON*/
+.btnMore {
+  -webkit-border-radius: 100;
+  -moz-border-radius: 100;
+  border-radius: 100px;
+  font-family: Arial;
+  color: #004783;
+  font-size: 20px;
+  padding: 69px 14px 69px 14px;
+  border: solid #004783 4px;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.btnMore:hover {
+  text-decoration: none;
+  color: #27AAE1;
+  border: solid #27AAE1 4px;
+  cursor: pointer;
+}
+
+.buttonDiv{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height:230px;
+}
 /*PROFILE*/
 .profileContainer{
 	margin: 0px;
@@ -155,6 +181,25 @@
 }
 .tags{
 	margin: 5px!important;
+}
+.btnMore {
+  font-size: 10px;
+  padding: 34.5px 7px 34.5px 7px;
+  border: solid #004783 2px;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.btnMore:hover {
+  text-decoration: none;
+  color: #27AAE1;
+  border: solid #27AAE1 2px;
+}
+
+.buttonDiv{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	height:115px;
 }
 
 

@@ -11,13 +11,19 @@ module.exports = React.createClass({
 
     getInitialState: function(){
         return {
-            photos: Store.getPhotos()
+            photos: Store.getPhotos(),
+            page: 1,
+            buttonDivClass: "centered buttonDiv valign-wrapper",
+            todas: true,
+            domo: false,
+            experto: false,
+            chroma: false
         };
     },
     componentWillMount: function(){
     },
     componentDidMount: function() {
-        getServerPhotos();
+        getServerPhotos(1);
         Store.addChangeListener(this._onChange);
     },
 
@@ -26,30 +32,68 @@ module.exports = React.createClass({
 
     },
     todasLasFotos: function() {
-        getServerPhotos();
+        this.setState({
+            page: 1
+        });
+        getServerPhotos(1);
     },
     chroma: function() {
-        getServerChromaPhotos();
+        this.setState({
+            page: 1
+        });
+        getServerChromaPhotos(1);
     },
     expertoEnViajes: function() {
-        getServerExpertoEnViajesPhotos();
+        this.setState({
+            page: 1
+        });
+        getServerExpertoEnViajesPhotos(1);
     },
     domo: function() {
-        getServerDomoPhotos();
+        this.setState({
+            page: 1
+        });
+        getServerDomoPhotos(1);
+    },
+    loadMore: function() {
+        var pageCounter = parseInt(this.state.page) + parseInt(1);
+        this.setState({
+            page: pageCounter
+        });
+        if(this.state.todas){
+            getServerPhotos(pageCounter);
+        }else if(this.state.chroma){
+            getServerChromaPhotos(pageCounter);
+        }else if(this.state.experto){
+            getServerExpertoEnViajesPhotos(pageCounter);
+        }else if(this.state.domo){
+            getServerDomoPhotos(pageCounter);
+        }
+       
+        
     },
    
     _onChange: function() {
-        if (this.isMounted()) {
-            
+        if (this.isMounted()) {            
             this.setState({
             photos: Store.getPhotos()
             });
+        }
+        if(this.state.photos == null || this.state.photos.length == 0){
+            this.setState({
+                buttonDivClass: "hidden"
+            });  
+        }else{
+            this.setState({
+                buttonDivClass: "centered buttonDiv valign-wrapper"
+            }); 
         }
     },
 
     render: function() {
         var photos = this.state.photos;
         var allPhotos = [];
+        
 
         for (var key in photos) {
             allPhotos.push(<PhotoCard key={key} photo={photos[key]} />);
@@ -70,6 +114,10 @@ module.exports = React.createClass({
                         <div className= "row centered">
                             {allPhotos}
                         </div>
+                        <div className={this.state.buttonDivClass}>
+                            <a className="btnMore centered center-block valign" onClick={this.loadMore}>CARGAR MAS</a>
+                        </div>
+                        
                     </div>
                 </div>
                 

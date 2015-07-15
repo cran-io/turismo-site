@@ -3,17 +3,17 @@ var TurismoAPIUtils = require ('../utils/TurismoAPIUtils');
 module.exports = {
 
 
-	getServerPhotos: function() {
-		TurismoAPIUtils.getPhotos();
+	getServerPhotos: function(page) {
+		TurismoAPIUtils.getPhotos(page);
 	},
-	getServerChromaPhotos: function() {
-		TurismoAPIUtils.getChromaPhotos();
+	getServerChromaPhotos: function(page) {
+		TurismoAPIUtils.getChromaPhotos(page);
 	},
-	getServerExpertoEnViajesPhotos: function() {
-		TurismoAPIUtils.getExpertoEnViajesPhotos();
+	getServerExpertoEnViajesPhotos: function(page) {
+		TurismoAPIUtils.getExpertoEnViajesPhotos(page);
 	},
-	getServerDomoPhotos: function() {
-		TurismoAPIUtils.getDomoPhotos();
+	getServerDomoPhotos: function(page) {
+		TurismoAPIUtils.getDomoPhotos(page);
 	},
 
 

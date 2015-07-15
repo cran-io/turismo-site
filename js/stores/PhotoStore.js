@@ -37,6 +37,8 @@ Store.dispatchToken = Dispatcher.register(function(payload) {
       photo = action.res;
     break;
 
+    
+
 
     default:
       // do nothing
