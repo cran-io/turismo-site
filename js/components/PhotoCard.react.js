@@ -10,7 +10,7 @@ var PhotoCard = React.createClass({
 
   getInitialState: function(){
     return {
-    	icons: 'photoIcons valign-wrapper centered',
+    	icons: 'hidden',
     	blackBackground: 'hidden'
     }
   },
@@ -42,7 +42,7 @@ var PhotoCard = React.createClass({
   },
   outPhotoIcons: function () {
   	this.setState({ 
-      icons: 'photoIcons valign-wrapper centered',
+      icons: 'hidden',
       blackBackground: 'hidden'
     });
   },
