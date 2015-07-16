@@ -83,6 +83,12 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+.pShare{
+	color:#004783;
+	font-weight: bold;
+	margin-top: 5px!important;
+	margin-bottom: 3px!important;
+}
 /*CARD*/
 .photoCard {
   position: relative;
