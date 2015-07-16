@@ -78,16 +78,25 @@ module.exports = React.createClass({
             this.setState({
             photos: Store.getPhotos()
             });
-        }
+        };
+       
+        
         if(this.state.photos == null || this.state.photos.length == 0){
             this.setState({
                 buttonDivClass: "hidden"
             });  
         }else{
-            this.setState({
-                buttonDivClass: "centered buttonDiv valign-wrapper"
-            }); 
-        }
+            if(Store.noMore()){
+                this.setState({
+                buttonDivClass: "hidden"
+                })
+            }else{
+                this.setState({
+                    buttonDivClass: "centered buttonDiv valign-wrapper"
+                }); 
+           }
+            
+        };
     },
 
     render: function() {
