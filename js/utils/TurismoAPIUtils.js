@@ -24,7 +24,7 @@ module.exports = {
   },
   getChromaPhotos: function(page) {
     request
-      .get(APIEndpoints.PUBLIC +'/images?category=chroma&page='+ page )
+      .get(APIEndpoints.PUBLIC +'/images?category=croma&page='+ page )
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
