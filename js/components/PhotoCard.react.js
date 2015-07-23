@@ -16,9 +16,9 @@ var PhotoCard = React.createClass({
   },
   componentDidMount: function() {
     RouteStore.addChangeListener(this._onChange);
-       $('.wCard').css('height',($('.wCard').width()));
-      $('.imgCard').css('height',($('.imgCard').width()));
-      $('.card-image').css('height',($('.card-image').width()));
+      $('.wCard').css('height',(($('.wCard').width())*0.5625));
+      $('.imgCard').css('height',(($('.imgCard').width())*0.5625));
+      $('.card-image').css('height',(($('.card-image').width())*0.5625));
       
   },
     
@@ -28,9 +28,9 @@ var PhotoCard = React.createClass({
   _onChange: function() {
 
     if (this.isMounted()) {
-      $('.wCard').css('height',($('.wCard').width()));
-      $('.imgCard').css('height',($('.imgCard').width()));
-      $('.card-image').css('height',($('.card-image').width()));
+      $('.wCard').css('height',(($('.wCard').width())*0.5625));
+      $('.imgCard').css('height',(($('.imgCard').width())*0.5625));
+      $('.card-image').css('height',(($('.card-image').width())*0.5625));
     }
   },
 
