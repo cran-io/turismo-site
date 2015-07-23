@@ -33,25 +33,41 @@ module.exports = React.createClass({
     },
     todasLasFotos: function() {
         this.setState({
-            page: 1
+            page: 1,
+            todas: true,
+            domo: false,
+            experto: false,
+            chroma: false
         });
         getServerPhotos(1);
     },
     chroma: function() {
         this.setState({
-            page: 1
+            page: 1,
+            todas: false,
+            domo: false,
+            experto: false,
+            chroma: true
         });
         getServerChromaPhotos(1);
     },
     expertoEnViajes: function() {
         this.setState({
-            page: 1
+            page: 1,
+            todas: false,
+            domo: false,
+            experto: true,
+            chroma: false
         });
         getServerExpertoEnViajesPhotos(1);
     },
     domo: function() {
         this.setState({
-            page: 1
+            page: 1,
+            todas: false,
+            domo: true,
+            experto: false,
+            chroma: false
         });
         getServerDomoPhotos(1);
     },
