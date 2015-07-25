@@ -8,8 +8,7 @@ var CHANGE_EVENT = 'change';
 var router = require('../router');
 
 var photos =[];
-var noMore = false; 
-
+var noMore = false;
 
 var Store = assign({}, EventEmitter.prototype, {
 
@@ -42,24 +41,28 @@ Store.dispatchToken = Dispatcher.register(function(payload) {
     case ActionTypes.STORE_PHOTOS:
       var response = action.res;
       noMore = false;
-      photos =response;
+      photos = response;
       Store.emitChange();
-    break;
+      break;
 
     case ActionTypes.ADD_PHOTOS:
       var response = action.res;
-      if(response.length<10)
-      {noMore=true;
-      }else{
-        noMore=false;
-      };
-      console.log(noMore);
+      if(response.length<10) {
+        noMore = true;
+      } else {
+        noMore = false;
+      }
+
       for (var key in response) {
         photos.push(response[key]);
-      };
+      }
       Store.emitChange();
-    break;
+      break;
 
+    case ActionTypes.SOURCE_PHOTO:
+      var photo = action.res;
+      localStorage.setItem('photo', photo);
+      break;
 
     default:
       // do nothing

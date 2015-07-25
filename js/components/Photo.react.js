@@ -1,14 +1,10 @@
 var React        = require('react');
-var PhotoStore   = require('../stores/Store');
-
 
 module.exports = React.createClass({
 
-
   componentWillMount: function(){
-
-
   },
+
   componentDidMount: function() {
     if (window.twttr) {
       window.twttr.widgets.load()
@@ -51,13 +47,11 @@ module.exports = React.createClass({
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
   },
-      
+
   componentWillUnmount: function() {
   },
+  
   _onChange: function() {
-
-
-
   },
 
   render: function() {
