@@ -6,59 +6,30 @@ var addPhotos           = require('../actions/ServerActions').addPhotos;
 var sourcePhoto         = require('../actions/ServerActions').sourcePhoto;
 
 module.exports = {
-  //GET
-  getPhotos: function(page) {
-    request
-      .get(APIEndpoints.PUBLIC +'/pictures?page='+ page )
-      .set('Accept', 'aplication/json')
-      .end(function(res) {
-        var text = JSON.parse(res.text);
-        if(page==1){
-          storePhotos(text);
-        }else{
-          addPhotos(text);
-        }
-      })
-  },
 
-  getChromaPhotos: function(page) {
-    request
-      .get(APIEndpoints.PUBLIC +'/pictures?category=croma_&page='+ page )
-      .set('Accept', 'aplication/json')
-      .end(function(res) {
-        console.log(res);
-        var text = JSON.parse(res.text);
-        if(page==1){
-          storePhotos(text);
-        }else{
-          addPhotos(text);
-        }
-      })
-  },
+  getPhotos: function(category, nextPage) {
+    var page = parseInt(sessionStorage.getItem('page')) || 1
+    var limit = 10;
+    if (nextPage) {
+      page += 1;
+      sessionStorage.setItem('page', page)
+    } else {
+      limit *= page;
+    }
 
-  getExpertoEnViajesPhotos: function(page) {
-    request
-      .get(APIEndpoints.PUBLIC +'/pictures?category=experto_='+ page )
-      .set('Accept', 'aplication/json')
-      .end(function(res) {
-        var text = JSON.parse(res.text);
-        if(page==1){
-          storePhotos(text);
-        }else{
-          addPhotos(text);
-        }
-      })
-  },
+    var url = APIEndpoints.PUBLIC +'/pictures?page=' + page + '&limit=' + limit;
+    if (category && category != "all") {
+      url += '&category=' + category;
+    }
 
-  getDomoPhotos: function(page) {
     request
-      .get(APIEndpoints.PUBLIC +'/pictures?category=domo_&page='+ page )
+      .get(url)
       .set('Accept', 'aplication/json')
       .end(function(res) {
         var text = JSON.parse(res.text);
-        if(page==1){
+        if(!nextPage) {
           storePhotos(text);
-        }else{
+        } else {
           addPhotos(text);
         }
       })

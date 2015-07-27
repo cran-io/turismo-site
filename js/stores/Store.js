@@ -40,8 +40,10 @@ Store.dispatchToken = Dispatcher.register(function(payload) {
 
     case ActionTypes.STORE_PHOTOS:
       var response = action.res;
-      noMore = false;
       photos = response;
+      if (response.length < 10) {
+        noMore = true
+      }
       Store.emitChange();
       break;
 
@@ -49,8 +51,6 @@ Store.dispatchToken = Dispatcher.register(function(payload) {
       var response = action.res;
       if(response.length<10) {
         noMore = true;
-      } else {
-        noMore = false;
       }
 
       for (var key in response) {

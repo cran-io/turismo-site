@@ -2,22 +2,13 @@ var React                          = require('react');
 var Store                          = require('../stores/Store');
 var PhotoCard                      = require('./PhotoCard.react');
 var getServerPhotos                = require('../actions/Actions').getServerPhotos;
-var getServerChromaPhotos          = require('../actions/Actions').getServerChromaPhotos;
-var getServerExpertoEnViajesPhotos = require('../actions/Actions').getServerExpertoEnViajesPhotos;
-var getServerDomoPhotos            = require('../actions/Actions').getServerDomoPhotos;
-
 
 module.exports = React.createClass({
 
   getInitialState: function(){
     return {
       photos: Store.getPhotos(),
-      page: 1,
-      buttonDivClass: "centered buttonDiv valign-wrapper",
-      todas: true,
-      domo: false,
-      experto: false,
-      chroma: false
+      buttonDivClass: "centered buttonDiv valign-wrapper"
     };
   },
 
@@ -25,72 +16,41 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function() {
-    getServerPhotos(1);
+    var category = sessionStorage.getItem("category");
+    getServerPhotos(category, false);
     Store.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
     Store.removeChangeListener(this._onChange);
-
   },
+
   todasLasFotos: function() {
-    this.setState({
-      page: 1,
-      todas: true,
-      domo: false,
-      experto: false,
-      chroma: false
-    });
-    getServerPhotos(1);
+    var category = "all";
+    sessionStorage.setItem("category", category)
+    getServerPhotos(category, false);
   },
 
   chroma: function() {
-    this.setState({
-      page: 1,
-      todas: false,
-      domo: false,
-      experto: false,
-      chroma: true
-    });
-    getServerChromaPhotos(1);
+    var category = "croma";
+    sessionStorage.setItem("category", category)
+    getServerPhotos(category, false);
   },
 
   expertoEnViajes: function() {
-    this.setState({
-      page: 1,
-      todas: false,
-      domo: false,
-      experto: true,
-      chroma: false
-    });
-    getServerExpertoEnViajesPhotos(1);
+    var category = "experto";
+    sessionStorage.setItem("category", category)
+    getServerPhotos(category, false);
   },
 
   domo: function() {
-    this.setState({
-      page: 1,
-      todas: false,
-      domo: true,
-      experto: false,
-      chroma: false
-    });
-    getServerDomoPhotos(1);
+  sessionStorage.setItem("category", category)
+    getServerPhotos(category, false);
   },
 
   loadMore: function() {
-    var pageCounter = parseInt(this.state.page) + parseInt(1);
-    this.setState({
-      page: pageCounter
-    });
-    if(this.state.todas){
-      getServerPhotos(pageCounter);
-    }else if(this.state.chroma){
-      getServerChromaPhotos(pageCounter);
-    }else if(this.state.experto){
-      getServerExpertoEnViajesPhotos(pageCounter);
-    }else if(this.state.domo){
-      getServerDomoPhotos(pageCounter);
-    }
+    var category = sessionStorage.getItem("category");
+    getServerPhotos(category,true);
   },
 
   _onChange: function() {
