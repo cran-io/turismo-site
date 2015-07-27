@@ -15,13 +15,13 @@ $(document).ready(function(){
 });
 
 $(document).ready( function() {
-	$('.wCard').css('height',($('.wCard').width()));
-	$('.imgCard').css('height',($('.imgCard').width()));
-	$('.card-image').css('height',($('.card-image').width()));
+  $('.wCard').css('height',(($('.wCard').width())*0.5625));
+  $('.imgCard').css('height',(($('.imgCard').width())*0.5625));
+  $('.card-image').css('height',(($('.card-image').width())*0.5625));
 });
 
 $( window ).resize(function() {
-  $('.wCard').css('height',($('.wCard').width()));
-	$('.imgCard').css('height',($('.imgCard').width()));
-	$('.card-image').css('height',($('.card-image').width()));
+  $('.wCard').css('height',(($('.wCard').width())*0.5625));
+  $('.imgCard').css('height',(($('.imgCard').width())*0.5625));
+  $('.card-image').css('height',(($('.card-image').width())*0.5625));
 });

@@ -1,36 +1,17 @@
-var React        = require('react');
-var PhotoStore   = require('../stores/Store');
-
+var React    = require('react');
+var redirect = require('../actions/RouteActions').redirect;
 
 module.exports = React.createClass({
 
-
   componentWillMount: function(){
-
-
   },
+
   componentDidMount: function() {
-    if (window.twttr) {
-      window.twttr.widgets.load()
-    } else {
-      window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
+    this.facebookShare();
+    this.twitterShare();
+  },
 
-        t._e = [];
-        t.ready = function(f) {
-          t._e.push(f);
-        };
-
-        return t;
-      }(document, "script", "twitter-wjs"));
-    }
-
+  facebookShare: function() {
     if (window.fbAsyncInit) {
       window.fbAsyncInit();
     } else {
@@ -43,21 +24,43 @@ module.exports = React.createClass({
       };
     }
 
-		(function(d, s, id){
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) {return;}
-				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/en_US/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
   },
-      
+
+  twitterShare: function() {
+    if (window.twttr) {
+      window.twttr.widgets.load()
+    } else {
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+
+        return t;
+      }(document, "script", "twitter-wjs")); 
+    }
+  },
+
   componentWillUnmount: function() {
   },
-  _onChange: function() {
 
-
-
+  backButton: function() {
+    redirect('profile');
   },
 
   render: function() {
@@ -65,6 +68,7 @@ module.exports = React.createClass({
       $("meta[name='twitter:image']").attr('content', photo)
       return(
           <div className="container height100">
+              <a className="btn tags" onClick={this.backButton} >VOLVER</a>
               <div className="photoView centered">
                   <div className="row">
                       <div className="centered">

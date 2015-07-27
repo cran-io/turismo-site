@@ -13,7 +13,7 @@ var routes = (
     <Route name="photo" path='/photo' handler={PhotoView} />
 
     <DefaultRoute handler={Profile}/>
-    
+
   </Route>
 );
 
