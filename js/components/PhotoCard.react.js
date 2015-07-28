@@ -3,7 +3,7 @@ var ReactPropTypes      = React.PropTypes;
 var Constants           = require('../constants/Constants');
 var RouteStore          = require('../stores/RouteStore');
 var APIRoot             = Constants.APIEndpoints.PUBLIC;
-var sourcePhoto      = require('../actions/ServerActions').sourcePhoto;
+var sourcePhoto         = require('../actions/ServerActions').sourcePhoto;
 var PhotoCard = React.createClass({
 
   getInitialState: function(){
@@ -16,8 +16,10 @@ var PhotoCard = React.createClass({
   componentDidMount: function() {
     RouteStore.addChangeListener(this._onChange);
       $('.wCard').css('height',(($('.wCard').width())*0.5625));
-      $('.imgCard').css('height',(($('.imgCard').width())*0.5625));
       $('.card-image').css('height',(($('.card-image').width())*0.5625));
+      console.log($('.wCard').width(), $('.wCard').height());
+      
+   
   },
 
   componentWillUnmount: function() {
@@ -27,9 +29,9 @@ var PhotoCard = React.createClass({
   _onChange: function() {
     if (this.isMounted()) {
       $('.wCard').css('height',(($('.wCard').width())*0.5625));
-      $('.imgCard').css('height',(($('.imgCard').width())*0.5625));
       $('.card-image').css('height',(($('.card-image').width())*0.5625));
     }
+
   },
 
   onPhotoIcons: function () {
@@ -54,11 +56,18 @@ var PhotoCard = React.createClass({
   render: function() {
     var photo = this.props.photo;
 
+
+    var backgroundStyle = {
+      backgroundImage: 'url("' + photo + '")'
+    };
+
     return (
       <div className="col-lg-4 col-md-3 col-xs-6 noPadding wCard" id="wCard">
         <div className="photoCard " onMouseEnter={this.onPhotoIcons} onMouseLeave={this.outPhotoIcons} onClick={this.bigPhoto}>
           <div className="card-image waves-effect waves-block waves-light noMargin ">
-            <img className="imgCard z-depth-2"  src={photo}/>
+            <div className="imgCard z-depth-2" style={backgroundStyle}>
+              
+            </div>
          </div>
           <div className={this.state.blackBackground}></div>
           <div className={this.state.icons}>

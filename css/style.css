@@ -98,12 +98,28 @@
   width: 100%;
   z-index: 1;;
   -o-background-size: cover;
+  background-position: center;
 }
 .imgCard{
   width: 80%;
+  height: 100%;
   margin-top: 10%;
+  margin-left:10%;
   border-radius: 3px;
   transition: box-shadow .75s;
+  overflow: hidden;
+  vertical-align: middle;
+  position: relative!important;
+  overflow: hidden!important;
+  background-position: center;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;	
+}
+.image {
+	width: 100%;
+  background-position: center;
 }
 .photoIcons{
 	position: absolute;
