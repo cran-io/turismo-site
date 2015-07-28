@@ -15,6 +15,7 @@ module.exports = {
       sessionStorage.setItem('page', page)
     } else {
       limit *= page;
+      page = 1;
     }
 
     var url = APIEndpoints.PUBLIC +'/pictures?page=' + page + '&limit=' + limit;
