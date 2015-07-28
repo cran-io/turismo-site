@@ -44,7 +44,8 @@ module.exports = React.createClass({
   },
 
   domo: function() {
-  sessionStorage.setItem("category", category)
+    var category = "domo";
+    sessionStorage.setItem("category", category)
     getServerPhotos(category, false);
   },
 
