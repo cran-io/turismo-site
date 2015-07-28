@@ -52,7 +52,7 @@ module.exports = React.createClass({
         };
 
         return t;
-      }(document, "script", "twitter-wjs")); 
+      }(document, "script", "twitter-wjs"));
     }
   },
 
@@ -65,7 +65,8 @@ module.exports = React.createClass({
 
   render: function() {
       var photo = localStorage.getItem('photo');
-      $("meta[name='twitter:image']").attr('content', photo)
+      $("meta[name='twitter:image']").attr('content', photo);
+      $("meta[property='og:image']").attr('content', photo);
       return(
           <div className="container height100">
               <a className="btn tags" onClick={this.backButton} >VOLVER</a>
@@ -78,8 +79,8 @@ module.exports = React.createClass({
                   <div className="row">
                       <div className="col-lg-offset-3 col-lg-6 col-xs-offset-2 col-xs-8 center-align">
                           <p className="pShare">COMPARTIR EN:</p>
-                          <a className="fb-share-button fbMargin" data-href={photo} data-layout="button"></a>
-                          <a href="https://twitter.com/intent/tweet" className="twitter-share-button fbMargin"  data-size="default" data-count="none"></a>
+                          <div className="fb-share-button fbMargin" data-href="http://sesorium.tecnolopolis.argentina.tur.ar/" data-layout="button"></div>
+                          <a href="https://twitter.com/intent/tweet?url=http://sesorium.tecnolopolis.argentina.tur.ar/" className="twitter-share-button fbMargin" data-size="default" data-count="none"></a>
 
                       </div>
                       <div className="col-lg-12 col-xs-12 center-align downloadMargin">
