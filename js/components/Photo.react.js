@@ -69,7 +69,7 @@ module.exports = React.createClass({
       $("meta[property='og:image']").attr('content', photo);
       return(
           <div className="container height100">
-              <a className="btn tags" onClick={this.backButton} >VOLVER</a>
+              <a className="btn-large tags" onClick={this.backButton} >VOLVER</a>
               <div className="photoView centered">
                   <div className="row">
                       <div className="centered">
@@ -84,7 +84,7 @@ module.exports = React.createClass({
 
                       </div>
                       <div className="col-lg-12 col-xs-12 center-align downloadMargin">
-                          <a className="waves-effect waves-light btn" href={photo} download="photo1.jpg">DESCARGAR IMAGEN</a>
+                          <a className="waves-effect waves-light btn-large" href={photo} download="photo1.jpg">DESCARGAR IMAGEN</a>
                       </div>
                       <div className="footer">
 

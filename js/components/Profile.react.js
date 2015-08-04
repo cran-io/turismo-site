@@ -92,10 +92,10 @@ module.exports = React.createClass({
         <div className="row">
           <div className="col-lg-offset-1 col-lg-10">
             <div className="profileHeader  centered">
-              <a className="btn tags" onClick={this.todasLasFotos} >TODAS LAS FOTOS</a>
-              <a className="btn tags" onClick={this.chroma} >#CHROMA</a>
-              <a className="btn tags" onClick={this.expertoEnViajes}>#EXPERTO EN VIAJES</a>
-              <a className="btn tags" onClick={this.domo}>#DOMO</a>
+              <a className="btn-large tags" onClick={this.todasLasFotos} >TODAS LAS FOTOS</a>
+              <a className="btn-large tags" onClick={this.chroma} >#CHROMA</a>
+              <a className="btn-large tags" onClick={this.expertoEnViajes}>#EXPERTO EN VIAJES</a>
+              <a className="btn-large tags" onClick={this.domo}>#DOMO</a>
             </div>
             <div className="row">
 							<div className="col-md-offset-4 col-md-2 col-xs-6">
