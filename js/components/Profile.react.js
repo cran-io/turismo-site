@@ -1,7 +1,8 @@
-var React                          = require('react');
-var Store                          = require('../stores/Store');
-var PhotoCard                      = require('./PhotoCard.react');
-var getServerPhotos                = require('../actions/Actions').getServerPhotos;
+var React = require('react');
+var Store = require('../stores/Store');
+var PhotoCard = require('./PhotoCard.react');
+var getServerPhotos = require('../actions/Actions').getServerPhotos;
+var DateTimeField = require('react-bootstrap-datetimepicker');
 
 module.exports = React.createClass({
 
@@ -96,6 +97,14 @@ module.exports = React.createClass({
               <a className="btn tags" onClick={this.expertoEnViajes}>#EXPERTO EN VIAJES</a>
               <a className="btn tags" onClick={this.domo}>#DOMO</a>
             </div>
+            <div className="row">
+							<div className="col-md-offset-4 col-md-2 col-xs-6">
+								<DateTimeField />
+							</div>
+              <div className="col-md-offset-0 col-md-2 col-xs-6">
+								<DateTimeField />
+							</div>
+						</div>
             <div className= "row centered">
               {allPhotos}
             </div>
