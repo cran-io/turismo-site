@@ -23,6 +23,14 @@ module.exports = {
       url += '&category=' + category;
     }
 
+    var start_date = sessionStorage.getItem("start_date");
+    var end_date = sessionStorage.getItem("end_date");
+
+    if (start_date && end_date) {
+      url += '&start_date=' + start_date;
+      url += '&end_date=' + end_date;
+    }
+
     request
       .get(url)
       .set('Accept', 'aplication/json')

@@ -17,9 +17,6 @@ var PhotoCard = React.createClass({
     RouteStore.addChangeListener(this._onChange);
       $('.wCard').css('height',(($('.wCard').width())*0.5625));
       $('.card-image').css('height',(($('.card-image').width())*0.5625));
-      console.log($('.wCard').width(), $('.wCard').height());
-      
-   
   },
 
   componentWillUnmount: function() {
@@ -66,7 +63,7 @@ var PhotoCard = React.createClass({
         <div className="photoCard " onMouseEnter={this.onPhotoIcons} onMouseLeave={this.outPhotoIcons} onClick={this.bigPhoto}>
           <div className="card-image waves-effect waves-block waves-light noMargin ">
             <div className="imgCard z-depth-2" style={backgroundStyle}>
-              
+
             </div>
          </div>
           <div className={this.state.blackBackground}></div>

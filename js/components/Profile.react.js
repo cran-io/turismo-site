@@ -26,33 +26,14 @@ module.exports = React.createClass({
     Store.removeChangeListener(this._onChange);
   },
 
-  todasLasFotos: function() {
-    var category = "all";
-    sessionStorage.setItem("category", category)
-    getServerPhotos(category, false);
+  filterByCategory: function(category) {
+    sessionStorage.setItem("category", category);
+    this.loadPhotos(false);
   },
 
-  chroma: function() {
-    var category = "croma";
-    sessionStorage.setItem("category", category)
-    getServerPhotos(category, false);
-  },
-
-  expertoEnViajes: function() {
-    var category = "experto";
-    sessionStorage.setItem("category", category)
-    getServerPhotos(category, false);
-  },
-
-  domo: function() {
-    var category = "domo";
-    sessionStorage.setItem("category", category)
-    getServerPhotos(category, false);
-  },
-
-  loadMore: function() {
+  loadPhotos: function(loadMore) {
     var category = sessionStorage.getItem("category");
-    getServerPhotos(category,true);
+    getServerPhotos(category,loadMore);
   },
 
   _onChange: function() {
@@ -79,6 +60,17 @@ module.exports = React.createClass({
     }
   },
 
+  fromDateChange: function(date) {
+    sessionStorage.setItem("start_date", date);
+    this.loadPhotos(false);
+  },
+
+  toDateChange: function(date) {
+    sessionStorage.setItem("end_date", date);
+    console.log(date);
+    this.loadPhotos(false);
+  },
+
   render: function() {
     var photos = this.state.photos;
     var allPhotos = [];
@@ -87,29 +79,32 @@ module.exports = React.createClass({
       allPhotos.push(<PhotoCard key={key} photo={photos[key]} />);
     }
 
+    var start_date = sessionStorage.getItem("start_date") || "1437058800000";
+    var end_date = sessionStorage.getItem("end_date") || Date.now();
+
     return(
       <div className="container profileContainer">
         <div className="row">
           <div className="col-lg-offset-1 col-lg-10">
             <div className="profileHeader  centered">
-              <a className="btn-large tags" onClick={this.todasLasFotos} >TODAS LAS FOTOS</a>
-              <a className="btn-large tags" onClick={this.chroma} >#CHROMA</a>
-              <a className="btn-large tags" onClick={this.expertoEnViajes}>#EXPERTO EN VIAJES</a>
-              <a className="btn-large tags" onClick={this.domo}>#DOMO</a>
+              <a className="btn-large tags" onClick={this.filterByCategory.bind(null, "all")} >TODAS LAS FOTOS</a>
+              <a className="btn-large tags" onClick={this.filterByCategory.bind(null, "croma")} >#CHROMA</a>
+              <a className="btn-large tags" onClick={this.filterByCategory.bind(null, "sensorium")}>#SENSORIUM</a>
+              <a className="btn-large tags" onClick={this.filterByCategory.bind(null, "domo")}>#DOMO</a>
             </div>
             <div className="row">
 							<div className="col-md-offset-4 col-md-2 col-xs-6">
-								<DateTimeField />
+	               <DateTimeField onChange={this.fromDateChange} dateTime={start_date} inputFormat="DD/MM/YY hh:mm"/>
 							</div>
               <div className="col-md-offset-0 col-md-2 col-xs-6">
-								<DateTimeField />
+								<DateTimeField onChange={this.toDateChange} dateTime={end_date} inputFormat="DD/MM/YY hh:mm"/>
 							</div>
 						</div>
             <div className= "row centered">
               {allPhotos}
             </div>
             <div className={this.state.buttonDivClass}>
-              <a className="btnMore centered center-block valign" onClick={this.loadMore}>CARGAR MAS</a>
+              <a className="btnMore centered center-block valign" onClick={this.loadPhotos.bind(null, true)}>CARGAR MAS</a>
             </div>
           </div>
         </div>
