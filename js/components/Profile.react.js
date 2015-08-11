@@ -74,6 +74,10 @@ module.exports = React.createClass({
   render: function() {
     var photos = this.state.photos;
     var allPhotos = [];
+    var bool = true;
+    var style = {
+      cursor: 'pointer'
+    };
 
     for (var key in photos) {
       allPhotos.push(<PhotoCard key={key} photo={photos[key]} />);
@@ -94,10 +98,10 @@ module.exports = React.createClass({
             </div>
             <div className="row">
 							<div className="col-md-offset-4 col-md-2 col-xs-6">
-	               <DateTimeField onChange={this.fromDateChange} dateTime={start_date} inputFormat="DD/MM/YY hh:mm"/>
+	               <DateTimeField onChange={this.fromDateChange} dateTime={start_date} inputFormat="DD/MM/YY hh:mm" style={style}/>
 							</div>
               <div className="col-md-offset-0 col-md-2 col-xs-6">
-								<DateTimeField onChange={this.toDateChange} dateTime={end_date} inputFormat="DD/MM/YY hh:mm"/>
+								<DateTimeField onChange={this.toDateChange} dateTime={end_date} inputFormat="DD/MM/YY hh:mm" />
 							</div>
 						</div>
             <div className= "row centered">

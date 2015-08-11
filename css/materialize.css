@@ -1964,6 +1964,11 @@ table {
 td, th {
   padding: 0; }
 
+td{
+  cursor: pointer!important; }
+th{
+  cursor: default!important; }  
+
 html {
   box-sizing: border-box; }
 
