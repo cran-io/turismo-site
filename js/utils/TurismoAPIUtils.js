@@ -23,8 +23,8 @@ module.exports = {
       url += '&category=' + category;
     }
 
-    var start_date = sessionStorage.getItem("start_date");
-    var end_date = sessionStorage.getItem("end_date");
+    var start_date = sessionStorage.getItem("start_date") || "1437058800000";
+    var end_date = sessionStorage.getItem("end_date") || Date.now();
 
     if (start_date && end_date) {
       url += '&start_date=' + start_date;
