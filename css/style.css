@@ -308,3 +308,12 @@
 td{
 	text-align: center;
 }
+.picker-switch{
+	color: #27AAE1;
+	font-weight: bold;
+}
+
+.picker-switch:hover{
+	color: #004783;
+	font-weight: bold;
+}
