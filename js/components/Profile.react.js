@@ -67,7 +67,6 @@ module.exports = React.createClass({
 
   toDateChange: function(date) {
     sessionStorage.setItem("end_date", date);
-    console.log(date);
     this.loadPhotos(false);
   },
 
